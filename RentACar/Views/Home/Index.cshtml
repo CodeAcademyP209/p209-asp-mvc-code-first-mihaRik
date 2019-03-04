@@ -1,0 +1,30 @@
+﻿@model IEnumerable<RentACar.Models.Car>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Cars</h2>
+
+<div class="row justify-content-around">
+    @foreach (var car in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/Images/@(car.Image ?? "no-image.jpg")" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@car.Brand</h5>
+                <p>@car.Model</p>
+                <ul>
+                    <li>Year: @car.Year</li>
+                    <li>Engine power: @car.EnginePower</li>
+                    <li>Horse power: @car.HorsePower</li>
+                    <li>Engine type: @car.EngineType</li>
+                    @if (car.Mileage != null)
+                    {
+                        <li>Mileage: @car.Mileage</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

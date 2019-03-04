@@ -1,0 +1,58 @@
+﻿@model RentACar.Models.Car
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div class="col-12">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Brand)
+            @Html.TextBoxFor(m => m.Brand, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Brand)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Model)
+            @Html.TextBoxFor(m => m.Model, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Model)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Year)
+            @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Year)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.EnginePower)
+            @Html.TextBoxFor(m => m.EnginePower, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.EnginePower)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.HorsePower)
+            @Html.TextBoxFor(m => m.HorsePower, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.HorsePower)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.EngineType)
+            @Html.TextBoxFor(m => m.EngineType, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.EngineType)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mileage)
+            @Html.TextBoxFor(m => m.Mileage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Mileage)
+        </div>
+
+        <input type="submit" value="Create" class="btn btn-success"/>
+    }
+</div>
